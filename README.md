@@ -12,11 +12,14 @@ This project will be developed with the following technologies:
 
 Clone the project and access its folder.
 
+```bash
 $ git clone https://github.com/eduardacalado/desafio-taqtile
 
 $ cd desafio-taqtile
+```
 
 To install and inicialize the project follow the steps:
+
 ```bash
 # Install the dependencies
 $ yarn install 
@@ -26,3 +29,4 @@ $ npm install
 $ yarn dev
 or 
 $ npm run dev
+```
