@@ -11,11 +11,11 @@ function App() {
         <S.InstaqTitle src={InstaqLogo} />
       </S.TitleContainer>
       <S.InputContainer>
-        <S.InputTitle>Email</S.InputTitle>
+        <S.InputLabel>Email</S.InputLabel>
         <S.InputArea />
       </S.InputContainer>
       <S.InputContainer>
-        <S.InputTitle>Senha</S.InputTitle>
+        <S.InputLabel>Senha</S.InputLabel>
         <S.InputArea />
       </S.InputContainer>
       <S.LoginButton>
