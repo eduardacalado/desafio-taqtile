@@ -32,6 +32,10 @@ export const WelcomeTitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: ${themeStyled.breakpoints.sm}px) {
+    padding: 1rem;
+  }
 `;
 
 export const WelcomeTitle = styled(Text).attrs({
@@ -66,10 +70,11 @@ export const InputArea = styled.div`
   }
 `;
 
-export const InputsButtonContainer = styled.div`
+export const InputsButtonContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 20rem;
+  gap: 1rem;
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
     width: 24rem;
@@ -79,6 +84,7 @@ export const InputsButtonContainer = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 `;
 
 export const InputLabel = styled(Text).attrs({
@@ -100,6 +106,11 @@ export const TextInput = styled.input`
   }
 `;
 
+export const ErrorMessage = styled.p`
+  color: red;
+  margin: 0;
+`;
+
 export const LoginButton = styled.button`
   width: 100%;
   height: 3rem;
@@ -108,7 +119,7 @@ export const LoginButton = styled.button`
   border: none;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   &:active {
     opacity: 0.8;

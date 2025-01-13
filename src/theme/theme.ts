@@ -30,7 +30,7 @@ const customThemeStyled = () => ({
     borderRadius: 4,
   },
   breakpoints: {
-    sm: 480,
+    sm: 390,
     md: 860,
     lg: 1280,
   },
