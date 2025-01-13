@@ -101,6 +101,7 @@ export const TextInput = styled.input`
   border-radius: ${({ theme }) => theme.size.m1};
   border: 2px solid ${themeStyled.colors.primary['700']};
   margin-bottom: ${({ theme }) => theme.size.m4};
+  font-size: 18px;
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
     width: 24rem;
@@ -119,6 +120,7 @@ export const LoginButton = styled.button`
   border: none;
   justify-content: center;
   align-items: center;
+  margin-top: 8px;
 
   &:active {
     opacity: 0.8;
