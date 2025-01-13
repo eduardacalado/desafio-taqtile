@@ -2,7 +2,7 @@ import { customThemeStyled } from './theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
 
-export type ThemeContextDataProps = {
+type ThemeContextDataProps = {
   children?: React.ReactNode;
 };
 
