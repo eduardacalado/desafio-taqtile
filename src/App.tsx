@@ -1,13 +1,10 @@
-import './App.css';
+import { Login } from './login';
+import { StyledThemeProvider } from './theme/ThemeProvider';
 
-function App() {
+export function App() {
   return (
-    <div className='container'>
-      <div>
-        <h1>Hello, world! 👋</h1>
-      </div>
-    </div>
+    <StyledThemeProvider>
+      <Login />
+    </StyledThemeProvider>
   );
 }
-
-export default App;
