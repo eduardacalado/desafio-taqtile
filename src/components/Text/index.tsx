@@ -17,9 +17,9 @@ const StyledText = styled.div<TextProps>`
   ${({ margin }) => margin && `margin: ${margin}px`};
 `;
 
-export const Text: React.FC<TextProps> = ({ children, ...props }) => {
+export const Text: React.FC<TextProps> = ({ children, tag, ...props }) => {
   return (
-    <StyledText {...props}>
+    <StyledText as={tag} {...props}>
       {children}
     </StyledText>
   );

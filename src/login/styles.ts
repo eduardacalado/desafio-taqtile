@@ -10,7 +10,7 @@ export const ScreenContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.size.m1};
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
     flex-direction: row;
@@ -20,6 +20,7 @@ export const ScreenContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: ${themeStyled.size.m4};
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
     align-items: center;
@@ -34,7 +35,7 @@ export const WelcomeTitleContainer = styled.div`
   justify-content: center;
 
   @media (min-width: ${themeStyled.breakpoints.sm}px) {
-    padding: 1rem;
+    padding-left: ${({ theme }) => theme.size.m4};
   }
 `;
 
@@ -44,18 +45,17 @@ export const WelcomeTitle = styled(Text).attrs({
   weight: '500',
 })`
   color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ size }) => size};
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
-    font-size: 50px;
+    font-size: ${({ theme }) => theme.size.m9};
   }
 `;
 
 export const InstaqTitle = styled.img`
-  width: 6rem;
+  width: 96px;
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
-    width: 13rem;
+    width: 206px;
   }
 `;
 
@@ -73,18 +73,17 @@ export const InputArea = styled.div`
 export const InputsButtonContainer = styled.form`
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  gap: 1rem;
+  width: 320px;
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
-    width: 24rem;
+    width: 384px;
   }
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  margin-top: ${({ theme }) => theme.size.m1};
 `;
 
 export const InputLabel = styled(Text).attrs({
@@ -92,14 +91,16 @@ export const InputLabel = styled(Text).attrs({
   tag: 'p',
 })`
   color: #1d1d1d;
+  padding-bottom: ${({ theme }) => theme.size.m1};
 `;
 
 export const TextInput = styled.input`
   width: 100%;
-  height: 3rem;
+  height: 48px;
   align-items: center;
   border-radius: ${({ theme }) => theme.size.m1};
-  border: 2px solid #01d5ad;
+  border: 2px solid ${themeStyled.colors.primary['700']};
+  margin-bottom: ${({ theme }) => theme.size.m4};
 
   @media (min-width: ${themeStyled.breakpoints.md}px) {
     width: 24rem;
@@ -108,27 +109,26 @@ export const TextInput = styled.input`
 
 export const ErrorMessage = styled.p`
   color: red;
-  margin: 0;
 `;
 
 export const LoginButton = styled.button`
   width: 100%;
-  height: 3rem;
-  background-color: #0a6c53;
+  height: 48px;
+  background-color: ${themeStyled.colors.primary['800']};
   border-radius: ${({ theme }) => theme.size.m1};
   border: none;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
 
   &:active {
     opacity: 0.8;
   }
 `;
 
-export const LoginButtonText = styled.p`
-  font-size: medium;
-  font-weight: bold;
-  background-color: transparent;
-  color: white;
+export const LoginButtonText = styled(Text).attrs({
+  size: 20,
+  tag: 'p',
+  weight: '600',
+})`
+  color: ${({ theme }) => theme.colors.white};
 `;
