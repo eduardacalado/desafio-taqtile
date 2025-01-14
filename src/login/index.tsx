@@ -19,8 +19,6 @@ export function Login() {
   } = useForm({ resolver: yupResolver(schema) });
   const onSubmit = (data: unknown) => console.log(data);
 
-  console.log(errors);
-
   return (
     <S.ScreenContainer>
       <S.TitleContainer>
