@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@apollo/client": "3.12.5",
     "@hookform/resolvers": "3.10.0",
     "axios": "1.7.9",
+    "@apollo/client": "3.12.5",
     "google-fonts": "1.0.0",
     "graphql": "16.10.0",
     "miragejs": "0.1.48",
