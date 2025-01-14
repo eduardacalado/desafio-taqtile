@@ -47,7 +47,7 @@ export const WelcomeTitle = styled(Text).attrs({
   color: ${({ theme }) => theme.colors.black};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    font-size: ${({ theme }) => theme.size.m9};
+    font-size: ${({ theme }) => theme.size.m10};
   }
 `;
 
