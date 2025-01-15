@@ -6,11 +6,11 @@ const spin = keyframes`
   }
 `;
 
-export const Spinner = styled.div<{ size: string; color: string }>`
+export const Spinner = styled.div<{ size: number; color: string }>`
   ${({ color, size }) => `
-width: ${size}px;
-height: ${size}px;
-border: 5px solid ${color};
+    width: ${size}px;
+    height: ${size}px;
+    border: 5px solid ${color};
   `}
   border-radius: 50%;
   display: inline-block;

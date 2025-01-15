@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import { themeStyled } from '../../theme/theme';
 import { Text } from '../Text';
 
 export const LoginButton = styled.button`
   width: 100%;
-  height: ${({ theme }) => theme.size.m10};
-  background-color: ${({ theme }) => theme.colors.primary['800']};
-  border-radius: ${({ theme }) => theme.size.m1};
+  height: ${themeStyled.size.m10};
+  background-color: ${themeStyled.colors.primary['800']};
+  border-radius: ${themeStyled.size.m1};
   border: none;
   justify-content: center;
   align-items: center;
-  margin-top: ${({ theme }) => theme.size.m8};
+  margin-top: ${themeStyled.size.m8};
 
   &:active {
     opacity: 0.8;
@@ -21,5 +22,5 @@ export const LoginButtonText = styled(Text).attrs({
   tag: 'p',
   weight: '600',
 })`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${themeStyled.colors.white};
 `;
