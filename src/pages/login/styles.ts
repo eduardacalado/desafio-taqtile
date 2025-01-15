@@ -13,7 +13,7 @@ export const ScreenContainer = styled.div`
   gap: ${themeStyled.size.m1};
   padding: 0 20px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+  @media (min-width: ${themeStyled.breakpoints.md}px) {
     flex-direction: row;
   }
 `;
@@ -23,7 +23,7 @@ export const TitleContainer = styled.div`
   flex-direction: row;
   margin-bottom: ${themeStyled.size.m4};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+  @media (min-width: ${themeStyled.breakpoints.md}px) {
     align-items: center;
     justify-content: center;
     flex: 1;
@@ -66,7 +66,7 @@ export const InputArea = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+  @media (min-width: ${themeStyled.breakpoints.md}px) {
     flex: 1;
   }
 `;
