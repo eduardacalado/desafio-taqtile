@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Text } from '../components/Text';
-import { themeStyled } from '../theme/theme';
+import { Text } from '../../components/Text';
+import { themeStyled } from '../../theme/theme';
 
 export const ScreenContainer = styled.div`
   display: flex;
