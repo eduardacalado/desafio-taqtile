@@ -1,4 +1,4 @@
-const customThemeStyled = () => ({
+const themeStyled = {
   colors: {
     primary: {
       '800': '#0A6C53',
@@ -52,8 +52,6 @@ const customThemeStyled = () => ({
     m9: '40px',
     m10: '48px',
   },
-});
+};
 
-const themeStyled = customThemeStyled();
-
-export { customThemeStyled, themeStyled };
+export { themeStyled };
