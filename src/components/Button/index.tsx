@@ -14,5 +14,12 @@ export function Button({ isLoading, text, ...props }: ButtonProps) {
     }
     return <S.LoginButtonText>{text}</S.LoginButtonText>;
   }
-  return <S.LoginButton {...props}>{buttonContent(isLoading)}</S.LoginButton>;
+
+  const isDisabled = isLoading || props.disabled;
+
+  return (
+    <S.LoginButton disabled={isDisabled} {...props}>
+      {buttonContent(isLoading)}
+    </S.LoginButton>
+  );
 }
