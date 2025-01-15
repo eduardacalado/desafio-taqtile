@@ -1,4 +1,4 @@
-const customThemeStyled = () => ({
+const themeStyled = {
   colors: {
     primary: {
       '800': '#0A6C53',
@@ -9,8 +9,13 @@ const customThemeStyled = () => ({
       '800': '#EF6D00',
       '700': '#F57D00',
     },
+    red: {
+      '900': '#8F0007',
+      '800': '#B80009',
+      '700': '#E0000B',
+    },
     dark: {
-      '900': '#090A0B',
+      '900': '#1D1D1D',
       '800': '#1C1F22',
       '700': '#2E3338',
     },
@@ -30,7 +35,7 @@ const customThemeStyled = () => ({
     borderRadius: 4,
   },
   breakpoints: {
-    sm: 480,
+    sm: 390,
     md: 860,
     lg: 1280,
   },
@@ -47,8 +52,6 @@ const customThemeStyled = () => ({
     m9: '40px',
     m10: '48px',
   },
-});
+};
 
-const themeStyled = customThemeStyled();
-
-export { customThemeStyled, themeStyled };
+export { themeStyled };
