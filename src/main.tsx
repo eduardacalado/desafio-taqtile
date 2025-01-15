@@ -1,14 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'https://flyby-router-demo.herokuapp.com/',
-  cache: new InMemoryCache(),
-});
+import { ApolloProvider } from '@apollo/client';
+import { StrictMode } from 'react';
+import { client } from './graphql/client';
 
 createRoot(document.getElementById('root')!).render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <StrictMode>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+    ,
+  </StrictMode>,
 );

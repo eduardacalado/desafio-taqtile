@@ -3,6 +3,10 @@ import InstaqLogo from '../assets/instaq-logo.png';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useMutation } from '@apollo/client';
+import { MutationLogin } from '../graphql/mutations.ts';
+import { toast } from 'react-toastify';
+import { Button } from '../components/Button/index.tsx';
 
 const schema = yup
   .object({
@@ -16,8 +20,22 @@ export function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
-  const onSubmit = (data: unknown) => console.log(data);
+  } = useForm({ resolver: yupResolver(schema), mode: 'onSubmit' });
+
+  const [loginMutation, { loading }] = useMutation(MutationLogin, {
+    onCompleted: (data) => {
+      localStorage.setItem('token', data.login.token);
+      toast.success('Login realizado com sucesso!');
+    },
+    onError: (error) => {
+      const errorMessage = error.message || 'Erro ao fazer login. Tente novamente';
+      toast.error(errorMessage);
+    },
+  });
+
+  const handleFormSubmit = async (formData: { email: string; password: string }) => {
+    await loginMutation({ variables: { data: formData } });
+  };
 
   return (
     <S.ScreenContainer>
@@ -28,7 +46,7 @@ export function Login() {
         <S.InstaqTitle src={InstaqLogo} />
       </S.TitleContainer>
       <S.InputArea>
-        <S.InputsButtonContainer>
+        <S.InputsButtonContainer onSubmit={handleSubmit(handleFormSubmit)}>
           <S.InputContainer>
             <S.InputLabel>Email</S.InputLabel>
             <S.TextInput {...register('email', { required: true })} />
@@ -39,9 +57,7 @@ export function Login() {
             <S.TextInput {...register('password', { required: true, minLength: 6 })} />
             {errors.password && <S.ErrorMessage>{errors.password.message}</S.ErrorMessage>}
           </S.InputContainer>
-          <S.LoginButton onClick={handleSubmit(onSubmit)}>
-            <S.LoginButtonText>Entrar</S.LoginButtonText>
-          </S.LoginButton>
+          <Button text='Entrar' type='submit' isLoading={loading} />
         </S.InputsButtonContainer>
       </S.InputArea>
     </S.ScreenContainer>
