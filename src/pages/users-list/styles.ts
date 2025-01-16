@@ -7,7 +7,7 @@ export const ScreenContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: #f0f2f5;
+  background-color: ${themeStyled.colors.lightGray};
   padding: 0 20px;
 
   align-items: center;
@@ -21,7 +21,6 @@ export const ScreenContainer = styled.div`
 export const Container = styled.div`
   margin-bottom: 100px;
   width: 100%;
-  /* max-width: 800px; */
 
   table {
     width: 100%;
@@ -36,7 +35,7 @@ export const Container = styled.div`
     }
 
     tr {
-      background: #ffff;
+      background: ${themeStyled.colors.white};
       border-radius: 10px;
       box-shadow: 0 0 0 2px ${themeStyled.colors.primary[700]};
     }

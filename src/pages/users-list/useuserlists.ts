@@ -12,7 +12,6 @@ export function useUserList() {
 
   useEffect(() => {
     api.get('users').then((reponse) => {
-      console.log(reponse.data.users);
       setUsers(reponse.data.users);
     });
   }, []);
