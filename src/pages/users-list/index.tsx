@@ -10,7 +10,7 @@ export function UsersList() {
   return (
     <S.ScreenContainer>
       <S.TableContainer>
-        <UsersTable />
+        <UsersTable users={usersData} />
       </S.TableContainer>
       <S.FloatButton onClick={() => navigate('/add-user')}>
         <FiPlus size={30} color={themeStyled.colors.white} />
