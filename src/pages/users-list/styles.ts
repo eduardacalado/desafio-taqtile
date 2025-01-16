@@ -18,6 +18,5 @@ export const ScreenContainer = styled.div`
 `;
 
 export const TableContainer = styled.div`
-  margin-bottom: 100px;
   width: 100%;
 `;

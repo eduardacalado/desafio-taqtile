@@ -1,20 +1,37 @@
-import { useEffect, useState } from 'react';
-import { api } from '../../services';
+import { useQuery } from '@apollo/client';
+import { useState } from 'react';
+import { getUsersList } from '../../graphql/queries';
+import { UsersProps } from '../../types/user';
 
-export type UsersProps = {
-  id: number;
-  name: string;
-  email: string;
+type UserQueryData = {
+  users: {
+    nodes: UsersProps[];
+  };
 };
 
 export function useUserList() {
-  const [users, setUsers] = useState<UsersProps[]>([]);
+  const [usersData, setUsersData] = useState<UsersProps[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const limit = 50;
 
-  useEffect(() => {
-    api.get('users').then((reponse) => {
-      setUsers(reponse.data.users);
-    });
-  }, []);
+  const { loading } = useQuery(getUsersList, {
+    variables: {
+      limit: limit,
+      offset: (currentPage - 1) * limit,
+    },
+    onCompleted: (data: UserQueryData) => {
+      setUsersData(data.users.nodes);
+    },
+    onError: (error) => {},
+  });
 
-  return { users };
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  return { usersData };
 }

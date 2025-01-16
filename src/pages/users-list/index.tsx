@@ -3,12 +3,12 @@ import * as S from './styles';
 import { useUserList } from './useuserlists';
 
 export function UsersList() {
-  const { users } = useUserList();
+  const { usersData } = useUserList();
 
   return (
     <S.ScreenContainer>
       <S.TableContainer>
-        <UsersTable users={users} />
+        <UsersTable users={usersData} />
       </S.TableContainer>
     </S.ScreenContainer>
   );
