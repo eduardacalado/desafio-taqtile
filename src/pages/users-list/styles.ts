@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Text } from '../../components/Text';
 import { themeStyled } from '../../theme/theme';
 
 export const ScreenContainer = styled.div`
@@ -8,54 +7,54 @@ export const ScreenContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: ${themeStyled.size.m1};
+  background-color: #f0f2f5;
   padding: 0 20px;
 
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    flex-direction: row;
-  }
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: ${themeStyled.size.m4};
-
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-  }
-`;
-
-export const WelcomeTitleContainer = styled.div`
-  display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${themeStyled.breakpoints.sm}px) {
-    padding-right: ${themeStyled.size.m4};
+  @media (min-width: ${themeStyled.breakpoints.md}px) {
+    padding: 0 100px;
   }
 `;
 
-export const WelcomeTitle = styled(Text).attrs({
-  size: 28,
-  tag: 'h1',
-  weight: '500',
-})`
-  color: ${themeStyled.colors.black};
+export const Container = styled.div`
+  margin-bottom: 100px;
+  width: 100%;
+  /* max-width: 800px; */
 
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    font-size: ${themeStyled.size.m10};
-  }
-`;
+  table {
+    width: 100%;
+    border-spacing: 0 1rem;
 
-export const InstaqTitle = styled.img`
-  width: 96px;
+    th {
+      color: gray;
+      font-weight: 400;
+      padding: 1rem 2rem;
+      text-align: left;
+      line-height: 1.5rem;
+    }
 
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    width: 206px;
+    tr {
+      background: #ffff;
+      border-radius: 10px;
+      box-shadow: 0 0 0 2px ${themeStyled.colors.primary[700]};
+    }
+
+    td {
+      padding: 18px 16px;
+      color: ${themeStyled.colors.dark[700]};
+
+      &:first-child {
+        color: ${themeStyled.colors.primary[700]};
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
   }
 `;
