@@ -7,10 +7,16 @@ import { FiPlus } from 'react-icons/fi';
 export function UsersList() {
   const navigate = useNavigate();
 
+  const { loading, usersData, handleNextPage, handlePreviousPage } = useUserList();
   return (
     <S.ScreenContainer>
       <S.TableContainer>
-        <UsersTable users={usersData} />
+        <UsersTable
+          users={usersData}
+          isLoading={loading}
+          handleNextPage={handleNextPage}
+          handlePreviousPage={handlePreviousPage}
+        />
       </S.TableContainer>
       <S.FloatButton onClick={() => navigate('/add-user')}>
         <FiPlus size={30} color={themeStyled.colors.white} />
