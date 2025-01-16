@@ -5,6 +5,7 @@ import { LoadingSpinner } from '../LoadingSpinner';
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading: boolean;
   text: string;
+  size?: number;
 };
 
 export function Button({ isLoading, text, ...props }: ButtonProps) {

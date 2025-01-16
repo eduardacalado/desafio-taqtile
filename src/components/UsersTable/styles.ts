@@ -37,3 +37,19 @@ export const TableDataName = styled.td`
   border-top-left-radius: ${themeStyled.size.m1};
   border-bottom-left-radius: ${themeStyled.size.m1};
 `;
+
+export const LoadingSpinnerContainer = styled.div`
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  /* padding-bottom: 150px; */
+`;
