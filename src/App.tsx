@@ -1,6 +1,6 @@
 import { Bounce, ToastContainer } from 'react-toastify';
 import { StyledThemeProvider } from './theme/ThemeProvider';
-import { AppRoutes } from './Routes';
+import { AppRoutes } from './routes';
 
 export function App() {
   return (
