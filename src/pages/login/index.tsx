@@ -7,7 +7,7 @@ import { useMutation } from '@apollo/client';
 import { MutationLogin } from '../../graphql/mutations.ts';
 import { toast } from 'react-toastify';
 import { Button } from '../../components/Button/index.tsx';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup
   .object({

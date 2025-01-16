@@ -20,6 +20,7 @@ const themeStyled = {
       '700': '#2E3338',
     },
     white: '#FFFFFF',
+    lightGray: '#f0f2f5',
     black: '#000000',
     border: '#E9E9E9',
     boxShadow: 'rgba(108, 65, 0, 0.05)',

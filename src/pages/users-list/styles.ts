@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Text } from '../../components/Text';
 import { themeStyled } from '../../theme/theme';
 
 export const ScreenContainer = styled.div`
@@ -8,54 +7,17 @@ export const ScreenContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: ${themeStyled.size.m1};
-  padding: 0 20px;
-
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    flex-direction: row;
-  }
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: ${themeStyled.size.m4};
-
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-  }
-`;
-
-export const WelcomeTitleContainer = styled.div`
-  display: flex;
+  background-color: ${themeStyled.colors.lightGray};
+  padding: 0 ${themeStyled.size.m6};
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${themeStyled.breakpoints.sm}px) {
-    padding-right: ${themeStyled.size.m4};
+  @media (min-width: ${themeStyled.breakpoints.md}px) {
+    padding: 0 100px;
   }
 `;
 
-export const WelcomeTitle = styled(Text).attrs({
-  size: 28,
-  tag: 'h1',
-  weight: '500',
-})`
-  color: ${themeStyled.colors.black};
-
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    font-size: ${themeStyled.size.m10};
-  }
-`;
-
-export const InstaqTitle = styled.img`
-  width: 96px;
-
-  @media (min-width: ${themeStyled.breakpoints.md}px) {
-    width: 206px;
-  }
+export const TableContainer = styled.div`
+  margin-bottom: 100px;
+  width: 100%;
 `;

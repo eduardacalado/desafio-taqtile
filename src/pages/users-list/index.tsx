@@ -1,15 +1,15 @@
-import * as S from './styles.ts';
-import InstaqLogo from '../../assets/instaq-logo.png';
+import { UsersTable } from '../../components/UsersTable';
+import * as S from './styles';
+import { useUserList } from './useuserlists';
 
 export function UsersList() {
+  const { users } = useUserList();
+
   return (
     <S.ScreenContainer>
-      <S.TitleContainer>
-        <S.WelcomeTitleContainer>
-          <S.WelcomeTitle>Bem Vindo(a) à</S.WelcomeTitle>
-        </S.WelcomeTitleContainer>
-        <S.InstaqTitle src={InstaqLogo} />
-      </S.TitleContainer>
+      <S.TableContainer>
+        <UsersTable users={users} />
+      </S.TableContainer>
     </S.ScreenContainer>
   );
 }
