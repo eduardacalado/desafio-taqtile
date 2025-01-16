@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { getUsersList } from '../../graphql/queries';
 import { UsersProps } from '../../types/user';
 
@@ -23,13 +24,13 @@ export function useUserList() {
       setUsersData(data.users.nodes);
     },
     onError: (error) => {
-      const errorMessage = error.message || 'Ocorreu um erro inesperado.';
+      const errorMessage = error.message || 'Falha ao listar usuários. Tente novamente';
+      toast.success(errorMessage);
     },
   });
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
-    console.log('teste');
   };
 
   const handlePreviousPage = () => {
