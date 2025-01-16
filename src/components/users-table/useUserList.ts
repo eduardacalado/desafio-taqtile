@@ -25,7 +25,7 @@ export function useUserList() {
     },
     onError: (error) => {
       const errorMessage = error.message || 'Falha ao listar usuários. Tente novamente';
-      toast.success(errorMessage);
+      toast.error(errorMessage);
     },
   });
 
