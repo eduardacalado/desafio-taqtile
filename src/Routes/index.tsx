@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { Login } from '../pages/login';
 import { UsersList } from '../pages/users-list';
 import { useEffect } from 'react';
@@ -21,6 +21,7 @@ export function AppRoutes() {
     <BrowserRouter>
       <ProtectedRoute />
       <Routes>
+        <Route path='/' element={<Navigate to='/users' />} />
         <Route path='/login' element={<Login />} />
         <Route path='/users' element={<UsersList />} />
       </Routes>
