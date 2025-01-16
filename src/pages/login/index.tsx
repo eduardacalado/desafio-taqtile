@@ -1,12 +1,13 @@
 import * as S from './styles.ts';
-import InstaqLogo from '../assets/instaq-logo.png';
+import InstaqLogo from '../../assets/instaq-logo.png';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useMutation } from '@apollo/client';
-import { MutationLogin } from '../graphql/mutations.ts';
+import { MutationLogin } from '../../graphql/mutations.ts';
 import { toast } from 'react-toastify';
-import { Button } from '../components/Button/index.tsx';
+import { Button } from '../../components/Button/index.tsx';
+import { useNavigate } from 'react-router';
 
 const schema = yup
   .object({
@@ -22,10 +23,14 @@ export function Login() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema), mode: 'onSubmit' });
 
+  const navigate = useNavigate();
+
   const [loginMutation, { loading }] = useMutation(MutationLogin, {
     onCompleted: (data) => {
       localStorage.setItem('token', data.login.token);
+      localStorage.setItem('isAuthenticated', 'true');
       toast.success('Login realizado com sucesso!');
+      navigate('/users');
     },
     onError: (error) => {
       const errorMessage = error.message || 'Erro ao fazer login. Tente novamente';

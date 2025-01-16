@@ -1,6 +1,6 @@
 import { Bounce, ToastContainer } from 'react-toastify';
-import { Login } from './login';
 import { StyledThemeProvider } from './theme/ThemeProvider';
+import { AppRoutes } from './routes';
 
 export function App() {
   return (
@@ -18,7 +18,7 @@ export function App() {
         theme='light'
         transition={Bounce}
       />
-      <Login />
+      <AppRoutes />
     </StyledThemeProvider>
   );
 }
