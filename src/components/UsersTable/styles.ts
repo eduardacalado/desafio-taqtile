@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeStyled } from '../../theme/theme';
+import { Text } from '../Text';
 
 export const Table = styled.table`
   width: 100%;
@@ -51,5 +52,12 @@ export const ButtonContainer = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  /* padding-bottom: 150px; */
+  align-items: center;
+`;
+
+export const PageNumberText = styled(Text).attrs({
+  size: 28,
+  tag: 'p',
+})`
+  color: ${themeStyled.colors.dark['900']};
 `;

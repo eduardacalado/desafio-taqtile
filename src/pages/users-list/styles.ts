@@ -5,7 +5,7 @@ export const ScreenContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   background-color: ${themeStyled.colors.lightGray};
   padding: 0 ${themeStyled.size.m6};

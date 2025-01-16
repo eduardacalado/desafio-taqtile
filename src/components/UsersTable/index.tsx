@@ -1,20 +1,15 @@
 import { themeStyled } from '../../theme/theme';
-import { UsersProps } from '../../types/user';
 import { Button } from '../Button';
 import { LoadingSpinner } from '../LoadingSpinner';
 import * as S from './styles';
+import { useUserList } from './useUserList';
 
-type UsersTableProps = {
-  users: UsersProps[];
-  isLoading: boolean;
-  handleNextPage: () => void;
-  handlePreviousPage: () => void;
-};
+export function UsersTable() {
+  const { loading, usersData, handleNextPage, handlePreviousPage, currentPage } = useUserList();
 
-export function UsersTable({ users, isLoading, handlePreviousPage, handleNextPage }: UsersTableProps) {
   return (
     <>
-      {isLoading ? (
+      {loading ? (
         <S.LoadingSpinnerContainer>
           <LoadingSpinner color={themeStyled.colors.primary[800]} />
         </S.LoadingSpinnerContainer>
@@ -28,7 +23,7 @@ export function UsersTable({ users, isLoading, handlePreviousPage, handleNextPag
               </S.TableHeaderRow>
             </thead>
             <tbody>
-              {users?.map((item) => (
+              {usersData?.map((item) => (
                 <S.TableRow key={item.id}>
                   <S.TableDataName>{item.name}</S.TableDataName>
                   <S.TableDataEmail>{item.email}</S.TableDataEmail>
@@ -39,8 +34,15 @@ export function UsersTable({ users, isLoading, handlePreviousPage, handleNextPag
         </>
       )}
       <S.ButtonContainer>
-        <Button size={150} onClick={handlePreviousPage} isLoading={isLoading} text='Previous' />
-        <Button size={150} onClick={handleNextPage} isLoading={isLoading} text='Next' />
+        <Button
+          size={150}
+          onClick={handlePreviousPage}
+          isLoading={loading}
+          text='Previous'
+          disabled={currentPage === 1}
+        />
+        <S.PageNumberText>{currentPage}</S.PageNumberText>
+        <Button size={150} onClick={handleNextPage} isLoading={loading} text='Next' />
       </S.ButtonContainer>
     </>
   );

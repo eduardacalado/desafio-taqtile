@@ -36,5 +36,5 @@ export function useUserList() {
     setCurrentPage(currentPage - 1);
   };
 
-  return { usersData, loading, handleNextPage, handlePreviousPage };
+  return { usersData, loading, handleNextPage, handlePreviousPage, currentPage };
 }
