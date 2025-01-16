@@ -22,16 +22,19 @@ export function useUserList() {
     onCompleted: (data: UserQueryData) => {
       setUsersData(data.users.nodes);
     },
-    onError: (error) => {},
+    onError: (error) => {
+      const errorMessage = error.message || 'Ocorreu um erro inesperado.';
+    },
   });
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
+    console.log('teste');
   };
 
   const handlePreviousPage = () => {
     setCurrentPage(currentPage - 1);
   };
 
-  return { usersData };
+  return { usersData, loading, handleNextPage, handlePreviousPage };
 }

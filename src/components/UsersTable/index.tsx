@@ -1,5 +1,5 @@
-import { toast } from 'react-toastify';
 import { themeStyled } from '../../theme/theme';
+import { UsersProps } from '../../types/user';
 import { Button } from '../Button';
 import { LoadingSpinner } from '../LoadingSpinner';
 import * as S from './styles';
