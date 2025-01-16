@@ -35,7 +35,6 @@ export function Login() {
     onError: (error) => {
       const errorMessage = error.message || 'Erro ao fazer login. Tente novamente';
       toast.error(errorMessage);
-      console.log(error);
     },
   });
 
