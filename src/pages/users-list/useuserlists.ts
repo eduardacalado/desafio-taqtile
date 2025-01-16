@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../services';
 
-type Transaction = {
+export type UsersProps = {
   id: number;
   name: string;
   email: string;
 };
 
 export function useUserList() {
-  const [users, setUsers] = useState<Transaction[]>([]);
+  const [users, setUsers] = useState<UsersProps[]>([]);
 
   useEffect(() => {
     api.get('users').then((reponse) => {
