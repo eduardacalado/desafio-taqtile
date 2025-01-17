@@ -1,6 +1,5 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 import { getUsersList } from '../../graphql/queries';
 import { UsersProps } from '../../types/user';
 
@@ -10,7 +9,11 @@ type UserQueryData = {
   };
 };
 
-export function useUserTable() {
+type UseUserTableArgs = {
+  handleError: (message: string) => void;
+};
+
+export function useUserTable({ handleError }: UseUserTableArgs) {
   const [usersData, setUsersData] = useState<UsersProps[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const limit = 50;
@@ -25,7 +28,7 @@ export function useUserTable() {
     },
     onError: (error) => {
       const errorMessage = error.message || 'Falha ao listar usuários. Tente novamente';
-      toast.error(errorMessage);
+      handleError(errorMessage);
     },
   });
 

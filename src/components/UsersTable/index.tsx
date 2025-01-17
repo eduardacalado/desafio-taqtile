@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { themeStyled } from '../../theme/theme';
 import { Button } from '../Button';
 import { LoadingSpinner } from '../LoadingSpinner';
@@ -5,7 +6,11 @@ import * as S from './styles';
 import { useUserTable } from './useUserTable';
 
 export function UsersTable() {
-  const { loading, usersData, handleNextPage, handlePreviousPage, currentPage } = useUserTable();
+  const { usersData, loading, handleNextPage, handlePreviousPage, currentPage } = useUserTable({
+    handleError: (message) => {
+      toast.error(message);
+    },
+  });
 
   return (
     <>
