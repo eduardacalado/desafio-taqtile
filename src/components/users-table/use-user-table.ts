@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getUsersList } from '../../graphql/queries';
 import { UsersProps } from '../../types/user';
 
@@ -17,6 +18,8 @@ export function useUserTable({ handleError }: UseUserTableArgs) {
   const [usersData, setUsersData] = useState<UsersProps[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const limit = 50;
+
+  const navigate = useNavigate();
 
   const { loading } = useQuery(getUsersList, {
     variables: {
@@ -40,5 +43,5 @@ export function useUserTable({ handleError }: UseUserTableArgs) {
     setCurrentPage(currentPage - 1);
   };
 
-  return { usersData, loading, handleNextPage, handlePreviousPage, currentPage };
+  return { usersData, loading, handleNextPage, handlePreviousPage, currentPage, navigate };
 }

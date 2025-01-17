@@ -2,6 +2,7 @@ import * as S from './styles';
 
 import { Button } from '../../components/Button';
 import { useAddUser } from './use-add-user';
+import { Input } from '../../components/Input/styles';
 
 export function AddUser() {
   const { handleFormSubmit, loading, errors, handleSubmit, register } = useAddUser();
@@ -10,21 +11,21 @@ export function AddUser() {
       <S.InputsButtonContainer onSubmit={handleSubmit(handleFormSubmit)}>
         <S.InputContainer>
           <S.InputLabel>Name</S.InputLabel>
-          <S.TextInput {...register('name')} /> {errors.name && <S.ErrorMessage>{errors.name.message}</S.ErrorMessage>}
+          <Input {...register('name')} /> {errors.name && <S.ErrorMessage>{errors.name.message}</S.ErrorMessage>}
         </S.InputContainer>
         <S.InputContainer>
           <S.InputLabel>Email</S.InputLabel>
-          <S.TextInput {...register('email')} />
+          <Input {...register('email')} />
           {errors.email && <S.ErrorMessage>{errors.email.message}</S.ErrorMessage>}
         </S.InputContainer>
         <S.InputContainer>
           <S.InputLabel>Password</S.InputLabel>
-          <S.TextInput type='password' {...register('password')} />
+          <Input type='password' {...register('password')} />
           {errors.password && <S.ErrorMessage>{errors.password.message}</S.ErrorMessage>}
         </S.InputContainer>
         <S.InputContainer>
           <S.InputLabel>Phone number</S.InputLabel>
-          <S.TextInput {...register('phone')} maxLength={11} />
+          <Input {...register('phone')} maxLength={11} />
           {errors.phone && <S.ErrorMessage>{errors.phone.message}</S.ErrorMessage>}
         </S.InputContainer>
         <S.InputContainer>

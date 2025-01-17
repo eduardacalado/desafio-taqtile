@@ -6,7 +6,7 @@ import * as S from './styles';
 import { useUserTable } from './use-user-table';
 
 export function UsersTable() {
-  const { usersData, loading, handleNextPage, handlePreviousPage, currentPage } = useUserTable({
+  const { usersData, loading, handleNextPage, handlePreviousPage, currentPage, navigate } = useUserTable({
     handleError: (message) => {
       toast.error(message);
     },
@@ -29,7 +29,7 @@ export function UsersTable() {
             </thead>
             <tbody>
               {usersData?.map((item) => (
-                <S.TableRow key={item.id}>
+                <S.TableRow key={item.id} onClick={() => navigate(`/user-detail/${item.id}`)}>
                   <S.TableDataName>{item.name}</S.TableDataName>
                   <S.TableDataEmail>{item.email}</S.TableDataEmail>
                 </S.TableRow>

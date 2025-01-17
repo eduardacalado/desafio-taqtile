@@ -8,6 +8,7 @@ import { MutationLogin } from '../../graphql/mutations.ts';
 import { toast } from 'react-toastify';
 import { Button } from '../../components/Button/index.tsx';
 import { useNavigate } from 'react-router-dom';
+import { Input } from '../../components/Input/styles.ts';
 
 const schema = yup
   .object({
@@ -54,12 +55,12 @@ export function Login() {
         <S.InputsButtonContainer onSubmit={handleSubmit(handleFormSubmit)}>
           <S.InputContainer>
             <S.InputLabel>Email</S.InputLabel>
-            <S.TextInput {...register('email', { required: true })} />
+            <Input {...register('email', { required: true })} />
             {errors.email && <S.ErrorMessage>{errors.email.message}</S.ErrorMessage>}
           </S.InputContainer>
           <S.InputContainer>
             <S.InputLabel>Senha</S.InputLabel>
-            <S.TextInput {...register('password', { required: true, minLength: 6 })} />
+            <Input {...register('password', { required: true, minLength: 6 })} />
             {errors.password && <S.ErrorMessage>{errors.password.message}</S.ErrorMessage>}
           </S.InputContainer>
           <Button text='Entrar' type='submit' isLoading={loading} />

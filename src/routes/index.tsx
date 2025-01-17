@@ -3,6 +3,7 @@ import { Login } from '../pages/login';
 import { UsersList } from '../pages/users-list';
 import { useEffect } from 'react';
 import { AddUser } from '../pages/add-user';
+import { UserDetail } from '../pages/detail-screen';
 
 function ProtectedRoute() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export function AppRoutes() {
         <Route path='/login' element={<Login />} />
         <Route path='/users' element={<UsersList />} />
         <Route path='/add-user' element={<AddUser />} />
+        <Route path='/user-detail/:id' element={<UserDetail />} />
       </Routes>
     </BrowserRouter>
   );

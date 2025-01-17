@@ -95,17 +95,6 @@ export const InputLabel = styled(Text).attrs({
   padding-bottom: ${themeStyled.size.m1};
 `;
 
-export const TextInput = styled.input`
-  width: 100%;
-  height: ${themeStyled.size.m10};
-  align-items: center;
-  border-radius: ${themeStyled.size.m1};
-  border: 2px solid ${themeStyled.colors.primary['700']};
-  margin-bottom: ${themeStyled.size.m4};
-  font-size: ${themeStyled.size.m5};
-  padding: ${themeStyled.size.base};
-`;
-
 export const ErrorMessage = styled(Text).attrs({
   size: '20px',
   tag: 'p',
