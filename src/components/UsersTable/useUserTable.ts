@@ -10,7 +10,7 @@ type UserQueryData = {
   };
 };
 
-export function useUserList() {
+export function useUserTable() {
   const [usersData, setUsersData] = useState<UsersProps[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const limit = 50;

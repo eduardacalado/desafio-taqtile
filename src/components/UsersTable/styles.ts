@@ -56,7 +56,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const PageNumberText = styled(Text).attrs({
-  size: 28,
+  size: '28px',
   tag: 'p',
 })`
   color: ${themeStyled.colors.dark['900']};

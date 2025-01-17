@@ -2,10 +2,10 @@ import { themeStyled } from '../../theme/theme';
 import { Button } from '../Button';
 import { LoadingSpinner } from '../LoadingSpinner';
 import * as S from './styles';
-import { useUserList } from './useUserList';
+import { useUserTable } from './useUserTable';
 
 export function UsersTable() {
-  const { loading, usersData, handleNextPage, handlePreviousPage, currentPage } = useUserList();
+  const { loading, usersData, handleNextPage, handlePreviousPage, currentPage } = useUserTable();
 
   return (
     <>
