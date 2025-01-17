@@ -7,7 +7,7 @@ export type UsersProps = {
   email: string;
 };
 
-export function useUserList() {
+export function useUserTable() {
   const [users, setUsers] = useState<UsersProps[]>([]);
 
   useEffect(() => {

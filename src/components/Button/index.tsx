@@ -5,6 +5,7 @@ import { LoadingSpinner } from '../LoadingSpinner';
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading: boolean;
   text: string;
+  size?: number;
 };
 
 export function Button({ isLoading, text, ...props }: ButtonProps) {
@@ -12,14 +13,14 @@ export function Button({ isLoading, text, ...props }: ButtonProps) {
     if (loading) {
       return <LoadingSpinner />;
     }
-    return <S.LoginButtonText>{text}</S.LoginButtonText>;
+    return <S.ButtonText>{text}</S.ButtonText>;
   }
 
   const isDisabled = isLoading || props.disabled;
 
   return (
-    <S.LoginButton disabled={isDisabled} {...props}>
+    <S.Button disabled={isDisabled} {...props}>
       {buttonContent(isLoading)}
-    </S.LoginButton>
+    </S.Button>
   );
 }

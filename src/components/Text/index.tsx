@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type TextProps = {
   tag?: keyof JSX.IntrinsicElements;
-  size?: number;
+  size?: string;
   color?: string;
   weight?: string;
   margin?: string;
@@ -11,7 +11,7 @@ type TextProps = {
 };
 
 const StyledText = styled.div<TextProps>`
-  font-size: ${({ size }) => size || 16}px;
+  font-size: ${({ size }) => size || '16px'};
   font-weight: ${({ weight }) => weight || 400};
   color: ${({ color }) => color || '#333333'};
   ${({ margin }) => margin && `margin: ${margin}px`};

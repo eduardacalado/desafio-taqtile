@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeStyled } from '../../theme/theme';
+import { Text } from '../Text';
 
 export const Table = styled.table`
   width: 100%;
@@ -36,4 +37,27 @@ export const TableDataName = styled.td`
   color: ${themeStyled.colors.primary[700]};
   border-top-left-radius: ${themeStyled.size.m1};
   border-bottom-left-radius: ${themeStyled.size.m1};
+`;
+
+export const LoadingSpinnerContainer = styled.div`
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const PageNumberText = styled(Text).attrs({
+  size: '28px',
+  tag: 'p',
+})`
+  color: ${themeStyled.colors.dark['900']};
 `;
