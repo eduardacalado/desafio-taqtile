@@ -36,7 +36,7 @@ export const InputContainer = styled.div`
 `;
 
 export const InputLabel = styled(Text).attrs({
-  size: 20,
+  size: '20px',
   tag: 'p',
 })`
   color: ${themeStyled.colors.dark['900']};
@@ -55,7 +55,7 @@ export const TextInput = styled.input`
 `;
 
 export const ErrorMessage = styled(Text).attrs({
-  size: 20,
+  size: '20px',
   tag: 'p',
   weight: '400',
 })`
