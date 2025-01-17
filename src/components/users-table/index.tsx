@@ -1,9 +1,9 @@
 import { toast } from 'react-toastify';
 import { themeStyled } from '../../theme/theme';
 import { Button } from '../Button';
-import { LoadingSpinner } from '../LoadingSpinner';
+import { LoadingSpinner } from '../loading-spinner';
 import * as S from './styles';
-import { useUserTable } from './useUserTable';
+import { useUserTable } from './use-user-table';
 
 export function UsersTable() {
   const { usersData, loading, handleNextPage, handlePreviousPage, currentPage } = useUserTable({

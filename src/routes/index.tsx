@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useNavigate, Navigate } from 'react-route
 import { Login } from '../pages/login';
 import { UsersList } from '../pages/users-list';
 import { useEffect } from 'react';
+import { AddUser } from '../pages/add-user';
 
 function ProtectedRoute() {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ export function AppRoutes() {
         <Route path='/' element={<Navigate to='/users' />} />
         <Route path='/login' element={<Login />} />
         <Route path='/users' element={<UsersList />} />
+        <Route path='/add-user' element={<AddUser />} />
       </Routes>
     </BrowserRouter>
   );

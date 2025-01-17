@@ -10,7 +10,6 @@ export const Button = styled.button<{ size?: number }>`
   border: none;
   justify-content: center;
   align-items: center;
-  margin-top: ${themeStyled.size.m8};
 
   &:active {
     opacity: 0.8;

@@ -3,6 +3,7 @@ const themeStyled = {
     primary: {
       '800': '#0A6C53',
       '700': '#01D5AD',
+      '600': '#09DB9C',
     },
     orange: {
       '900': '#E65200',

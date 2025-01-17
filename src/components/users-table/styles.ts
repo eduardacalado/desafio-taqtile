@@ -53,6 +53,8 @@ export const ButtonContainer = styled.div`
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 100px;
+  margin-top: 30px;
 `;
 
 export const PageNumberText = styled(Text).attrs({
@@ -60,4 +62,5 @@ export const PageNumberText = styled(Text).attrs({
   tag: 'p',
 })`
   color: ${themeStyled.colors.dark['900']};
+  text-align: center;
 `;
