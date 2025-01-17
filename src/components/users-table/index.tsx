@@ -1,6 +1,7 @@
+import { toast } from 'react-toastify';
 import { themeStyled } from '../../theme/theme';
 import { Button } from '../Button';
-import { LoadingSpinner } from '../LoadingSpinner';
+import { LoadingSpinner } from '../loading-spinner';
 import * as S from './styles';
 import { useUserTable } from './useUserTable';
 
