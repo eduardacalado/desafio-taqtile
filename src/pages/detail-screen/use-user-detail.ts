@@ -13,12 +13,12 @@ type UseUserDetailsArgs = {
 };
 
 export function useUserDetail({ handleError }: UseUserDetailsArgs) {
-  const { userId } = useParams<{ userId: string }>();
+  const { id } = useParams<{ id: string }>();
   const [userData, setUserData] = useState<UsersProps>();
 
   const { loading } = useQuery(getUserDetail, {
     variables: {
-      userId,
+      userId: id,
     },
     onCompleted: (data: UserQueryData) => {
       setUserData(data.user);
