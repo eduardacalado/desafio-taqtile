@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
-import { LoadingSpinner } from '../LoadingSpinner';
+import { LoadingSpinner } from '../loading-spinner';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading: boolean;
