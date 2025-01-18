@@ -22,7 +22,6 @@ export function useUserDetail({ handleError }: UseUserDetailsArgs) {
     },
     onCompleted: (data: UserQueryData) => {
       setUserData(data.user);
-      console.log(data);
     },
     onError: (error) => {
       const errorMessage = error.message || 'Falha ao ver detalhes do usuário. Tente novamente';

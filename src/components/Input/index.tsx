@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
-import { Input } from './styles';
+import { InputHTMLAttributes } from 'react';
+import * as S from './styles';
 
-type InputProps = {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   size?: string;
-  children: ReactNode;
 };
 
-export const input: React.FC<InputProps> = ({ children, ...props }) => {
-  return <Input {...props}>{children}</Input>;
-};
+export function Input({ size, ...props }: InputProps) {
+  return <S.Input size={size} {...props} />;
+}

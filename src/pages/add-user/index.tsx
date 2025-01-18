@@ -2,7 +2,7 @@ import * as S from './styles';
 
 import { Button } from '../../components/Button';
 import { useAddUser } from './use-add-user';
-import { Input } from '../../components/Input/styles';
+import { Input } from '../../components/Input';
 
 export function AddUser() {
   const { handleFormSubmit, loading, errors, handleSubmit, register } = useAddUser();
